@@ -700,7 +700,9 @@
         return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
       },
       _updateToday: function() {
-        this.today = new Date();
+        if (!this.today) {
+          this.today = new Date();
+        }
         this.today.setHours(0, 0, 0, 0);
       },
       _whichTransitionEnd: function() {

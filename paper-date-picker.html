@@ -163,7 +163,7 @@ styling:
         on-iron-select="_pageSelected">
         <neon-animatable id="chooseDate">
           <paper-calendar id="calendar" locale="{{locale}}" date="{{date}}"
-            min-date="{{minDate}}" max-date="{{maxDate}}">
+            min-date="{{minDate}}" max-date="{{maxDate}}" today="{{ tzDate }}">
           </paper-calendar>
         </neon-animatable>
         <neon-animatable id="chooseYear">
@@ -255,6 +255,13 @@ styling:
         _minYear: {
           type: Number,
           computed: '_getFullYear(minDate)'
+        },
+        /**
+         * Used to set current date
+         */
+        tzDate: {
+          type: Date,
+          value: new Date()
         }
       },
       behaviors: [
