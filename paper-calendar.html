@@ -643,8 +643,7 @@
         var item = event.model.item;
         var newDate = new Date(this.date.getTime());
         newDate.setYear(item.year);
-        newDate.setMonth(item.month);
-        newDate.setDate(item.day);
+        newDate.setMonth(item.month, item.day);
         this.date = newDate;
       },
       _isValidDate: function(date) {
